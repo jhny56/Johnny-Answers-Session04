@@ -1,4 +1,4 @@
-from ..src.robots.cleaning_robot import CleaningRobot
+from src.robots.cleaning_robot import CleaningRobot
 
 def testCleaningRobot():
 
@@ -11,4 +11,3 @@ def testCleaningRobot():
     testrobot.set_cleaning_tool("messe7a")
     testrobot.report_status()
 
-testCleaningRobot()

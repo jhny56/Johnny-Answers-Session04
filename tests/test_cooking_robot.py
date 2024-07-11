@@ -1,4 +1,4 @@
-from ..src.robots.cooking_robot import CookingRobot
+from src.robots.cooking_robot import CookingRobot
 
 def testCookingRobot():
 
@@ -10,5 +10,3 @@ def testCookingRobot():
     testrobot.report_status()
     testrobot.set_cooking_skill("chawke")
     testrobot.report_status()
-
-testCookingRobot()

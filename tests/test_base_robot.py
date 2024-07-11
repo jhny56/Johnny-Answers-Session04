@@ -1,4 +1,4 @@
-from ..src.robots.base_robot import Robot
+from src.robots.base_robot import Robot
 
 def testBaseRobot():
     robottest = Robot("testname",1000,"idle")
@@ -17,4 +17,4 @@ def testBaseRobot():
 
     robottest.report_status()
 
-testBaseRobot()
+

@@ -1,4 +1,4 @@
-from base_robot import Robot
+from .base_robot import Robot
 
 class CleaningRobot(Robot):
     def __init__(self, name:str, battery_level:int, status:str, cleaning_tool:str):

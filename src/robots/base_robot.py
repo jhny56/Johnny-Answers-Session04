@@ -22,7 +22,7 @@ class Robot(ABC):
         if(self.battery_level - amount <= 0):
             self.battery_level = 0
         else:
-            self.battery_level = self.battery_level - 20
+            self.battery_level = self.battery_level - amount
         return self.battery_level
 
     #get set name
