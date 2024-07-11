@@ -10,3 +10,5 @@ def testCleaningRobot():
     testrobot.report_status()
     testrobot.set_cleaning_tool("messe7a")
     testrobot.report_status()
+
+testCleaningRobot()

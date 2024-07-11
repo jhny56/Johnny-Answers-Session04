@@ -16,3 +16,5 @@ def testBaseRobot():
     robottest.set_status("Working")
 
     robottest.report_status()
+
+testBaseRobot()
