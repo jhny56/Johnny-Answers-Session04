@@ -10,6 +10,10 @@ class CookingRobot(Robot):
         print("Decreasing battery by 30%")
         Robot.decreasing_battery(self, 30)
 
+    def self_diagnose(self):
+        print("Cooking mechanism self diagnose start")
+
+
     #get set cooking_skill
     def get_cooking_skill(self) -> str: 
         return self.cooking_skill 

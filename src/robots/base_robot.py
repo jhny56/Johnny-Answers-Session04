@@ -12,7 +12,11 @@ class Robot(ABC):
 
     @abstractmethod
     def work(self):
-        print("work mechanism start")
+        pass
+
+    @abstractmethod
+    def self_diagnose(self):
+        print("self diagonizing")
 
     def report_status(self):
         print("robot name : " + self.name)

@@ -1,9 +1,9 @@
-from cooking_robot import CookingRobot
-from cleaning_robot import CleaningRobot
+from .cooking_robot import CookingRobot
+from .cleaning_robot import CleaningRobot
 
 class MaintencanceRobot(CookingRobot,CleaningRobot):
     def __init__(self, name:str, battery_level:int, status:str, cooking_skill:str,cleaning_tool:str):
-        super(CookingRobot).__init__(name,battery_level,status,cooking_skill)
+        super(CookingRobot,self).__init__(name,battery_level,status,cooking_skill)
         self.cleaning_tool = cleaning_tool
 
     def multi_task(self):

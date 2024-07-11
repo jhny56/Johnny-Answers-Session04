@@ -2,6 +2,8 @@ from tests.test_base_robot import testBaseRobot
 from tests.test_cleaning_robot import testCleaningRobot
 from tests.test_cooking_robot import testCookingRobot
 
+from src.robots.maintenance_robot import MaintencanceRobot
+
 def main():
     print("TESTING BASE ROBOT : ")
     # testBaseRobot()
@@ -11,6 +13,9 @@ def main():
 
     print("TESTING COOKING ROBOT : ")
     testCookingRobot()
+
+    maintrobot = MaintencanceRobot("testname",1000,"idle", "Choffata","stool")
+    maintrobot.multi_task()
 
 main()
 

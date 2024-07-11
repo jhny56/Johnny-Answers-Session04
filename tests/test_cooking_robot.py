@@ -10,3 +10,5 @@ def testCookingRobot():
     testrobot.report_status()
     testrobot.set_cooking_skill("chawke")
     testrobot.report_status()
+
+    testrobot.self_diagnose()   

@@ -10,6 +10,9 @@ class CleaningRobot(Robot):
         print("Decreasing battery by 20%")
         Robot.decreasing_battery(self, 20)
 
+    def self_diagnose(self):
+        print("Cleaning mechanism self diagnose start")
+
     #get set cleaning_tool
     def get_cleaning_tool(self) ->str: 
         return self.cleaning_tool 
