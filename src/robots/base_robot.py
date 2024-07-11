@@ -2,6 +2,7 @@ from abc import ABC, abstractmethod
 
 class Robot(ABC):
     def __init__(self, name:str, battery_level:int, status:str):
+        """ INITIALIZING ROBOT (testing docstring ...)"""
         self.name = name
         self.battery_level = battery_level
         self.status = status
@@ -22,6 +23,7 @@ class Robot(ABC):
             self.battery_level = 0
         else:
             self.battery_level = self.battery_level - 20
+        return self.battery_level
 
     #get set name
     def get_name(self) -> str: 
