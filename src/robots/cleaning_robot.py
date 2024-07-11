@@ -1,7 +1,7 @@
 from base_robot import Robot
 
 class CleaningRobot(Robot):
-    def __init__(self, name, battery_level, status, cleaning_tool):
+    def __init__(self, name:str, battery_level:int, status:str, cleaning_tool:str):
         super().__init__(name,battery_level,status)
         self.cleaning_tool = cleaning_tool
 
@@ -10,6 +10,11 @@ class CleaningRobot(Robot):
         print("Decreasing battery by 20%")
         Robot.decreasing_battery(self, 20)
 
+    #get set cleaning_tool
+    def get_cleaning_tool(self) ->str: 
+        return self.cleaning_tool 
+    def set_cleaning_tool(self, x:str): 
+        self.cleaning_tool = x 
 
    
 
