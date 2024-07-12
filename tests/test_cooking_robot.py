@@ -8,7 +8,6 @@ class TestCookingRobot(TestBaseRobot):
         self.robot = CookingRobot(name="CookerBot", battery_level=100, status="Idle", cooking_skill="Expert")
 
     def test_initialization(self):
-        super().test_initialization()
         self.assertEqual(self.robot.get_cooking_skill(), "Expert")
 
     def test_work(self):

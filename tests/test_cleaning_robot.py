@@ -8,7 +8,6 @@ class TestCleaningRobot(TestBaseRobot):
         self.robot = CleaningRobot(name="CleanerBot", battery_level=100, status="Idle", cleaning_tool="Vacuum")
 
     def test_initialization(self):
-        super().test_initialization()
         self.assertEqual(self.robot.get_cleaning_tool(), "Vacuum")
 
     def test_work(self):

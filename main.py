@@ -9,7 +9,7 @@ def main():
 
     maintrobot = MaintencanceRobot("Maintencance Robot 1",100,"idle", "Choffata","stool")
     maintrobot.report_status()
-    while(maintrobot.get_battery_level > 0):
+    while(maintrobot.get_battery_level() > 0):
         maintrobot.multi_task()
         print(maintrobot.get_battery_level())
     

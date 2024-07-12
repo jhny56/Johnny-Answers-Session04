@@ -8,6 +8,7 @@ class Robot(ABC):
         self.status = status
 
     def charge(self):
+        print("charging " + self.name + " to 100%")
         self.battery_level = 100
 
     @abstractmethod
@@ -21,7 +22,7 @@ class Robot(ABC):
     def report_status(self):
         print("robot name : " + self.name)
         print("robot status : " + self.status)
-        print("robot battery level : " + self.battery_level)
+        print("robot battery level : " + str(self.battery_level))
 
     def decreasing_battery(self,amount:int):
         if(self.battery_level - amount <= 0):
