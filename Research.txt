@@ -1,0 +1,82 @@
+## Research Process and Explanation of Advanced OOP Concepts Used
+
+### Research Process
+
+1. **Understanding Abstract Base Classes (ABCs)**:
+    - ABCs provide a way to define abstract methods that must be created within any child classes built from the abstract class. This ensures a consistent interface across different subclasses.
+    - The `abc` module in Python provides tools for defining abstract base classes.
+
+2. **Class Methods and Static Methods**:
+    - **Class Methods**: These methods are bound to the class and not the instance. They can modify class state that applies across all instances of the class. They are defined using the `@classmethod` decorator and take `cls` as the first parameter.
+    - **Static Methods**: These methods do not access or modify class or instance state. They are used for utility functions related to the class. They are defined using the `@staticmethod` decorator and do not take `self` or `cls` as the first parameter.
+
+### Implementation Details
+
+#### Abstract Base Classes (ABCs)
+
+In the `Robot` class, I defined `work` and `self_diagnose` as abstract methods. This ensures that any subclass of `Robot` must implement these methods, providing a consistent interface for all types of robots.
+
+```python
+from abc import ABC, abstractmethod
+
+class Robot(ABC):
+    @abstractmethod
+    def work(self):
+        pass
+
+    @abstractmethod
+    def self_diagnose(self):
+        pass
+```
+
+I DID NOT IMPLEMENT CLASS METHODS in my case
+
+#### Class Methods
+
+Class methods are used to perform common diagnostic tasks that are shared across all robots. By defining these methods at the class level, we ensure that they can be reused by any subclass.
+
+```python
+class Robot(ABC):
+    @classmethod
+    def common_diagnosis(cls):
+        print("Performing common robot diagnostics...")
+```
+
+In the `self_diagnose` method of each robot, we call this class method to perform common diagnostic checks.
+
+```python
+def self_diagnose(self):
+    Robot.common_diagnosis()
+    print("Cleaning mechanism self diagnose start")
+    Robot.battery_health_check(self.battery_level)
+```
+
+#### Static Methods
+
+Static methods are used for utility functions that do not need access to class or instance-specific data. In this case, we use a static method to check the battery health of the robot.
+
+```python
+class Robot(ABC):
+    @staticmethod
+    def battery_health_check(battery_level):
+        if battery_level < 20:
+            print("Battery level is critically low!")
+        else:
+            print("Battery level is sufficient.")
+```
+
+This method is called within the `self_diagnose` method to check the battery level without needing to access any class or instance-specific data.
+
+### Summary of Advanced OOP Concepts Used
+
+1. **Abstract Base Classes (ABCs)**:
+    - Define methods that must be implemented by subclasses.
+    - Ensure a consistent interface for all robot types.
+
+2. **Class Methods**:
+    - Provide shared functionality across all instances of a class.
+    - Used for common diagnostic checks in this implementation.
+
+3. **Static Methods**:
+    - Utility functions that do not require access to class or instance-specific data.
+    - Used for checking battery health in this implementation.
