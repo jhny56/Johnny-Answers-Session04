@@ -53,3 +53,11 @@ class Robot(ABC):
         return self.status 
     def set_status(self, x:str): 
         self.status = x 
+
+
+    @staticmethod
+    def battery_health_check(battery_level):
+        if battery_level < 20:
+            print("Battery level is critically low!")
+        else:
+            print("Battery level is sufficient.")

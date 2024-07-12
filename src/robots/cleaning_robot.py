@@ -5,6 +5,11 @@ class CleaningRobot(Robot):
         super().__init__(name,battery_level,status)
         self.cleaning_tool = cleaning_tool
 
+    #GPT version better : 
+    # def __init__(self, name: str, battery_level: int, status: str, cooking_skill: str, cleaning_tool: str):
+        # CookingRobot.__init__(self, name, battery_level, status, cooking_skill)
+        # CleaningRobot.__init__(self, name, battery_level, status, cleaning_tool)
+
     def work(self):
         print("Cleaning mechanism start")
         print("Decreasing battery by 20%")
