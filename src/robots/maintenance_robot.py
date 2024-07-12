@@ -9,6 +9,7 @@ class MaintencanceRobot(CookingRobot,CleaningRobot):
     def multi_task(self):
         CleaningRobot.work(self)
         CookingRobot.work(self)
+        print("MRO : ", MaintencanceRobot.__mro__)
 
 
     #get set cooking_skill

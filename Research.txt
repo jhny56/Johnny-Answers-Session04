@@ -80,3 +80,28 @@ This method is called within the `self_diagnose` method to check the battery lev
 3. **Static Methods**:
     - Utility functions that do not require access to class or instance-specific data.
     - Used for checking battery health in this implementation.
+
+
+## Method Resolution Order (MRO)
+
+    ### Understanding MRO
+
+    Method Resolution Order (MRO) is the order in which Python looks for a method in a hierarchy of classes. When dealing with multiple inheritance, MRO ensures the correct method is called.
+
+    ### Viewing MRO
+
+    You can view the MRO of a class using the `__mro__` attribute or the `mro()` method. For example:
+
+    ```python
+    print(MaintenanceRobot.__mro__)
+    which will give us : MRO :  (<class 'src.robots.maintenance_robot.MaintencanceRobot'>, <class 'src.robots.cooking_robot.CookingRobot'>, <class 'src.robots.cleaning_robot.CleaningRobot'>, <class 'src.robots.base_robot.Robot'>, <class 'abc.ABC'>, <class 'object'>)
+
+    ## Handling MRO in MaintenanceRobot
+
+        In the MaintenanceRobot class, the multi_task method explicitly calls the work methods of both CleaningRobot and CookingRobot to avoid any potential conflicts:
+
+        def multi_task(self):
+            CleaningRobot.work(self)
+            CookingRobot.work(self)
+
+        This ensures that both cleaning and cooking tasks are performed without ambiguity.
