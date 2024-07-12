@@ -1,14 +1,26 @@
+import unittest
 from src.robots.cooking_robot import CookingRobot
+from test_base_robot import TestBaseRobot
 
-def testCookingRobot():
+class TestCookingRobot(TestBaseRobot):
 
-    testrobot = CookingRobot("testname",1000,"idle", "mal3a")
+    def setUp(self):
+        self.robot = CookingRobot(name="CookerBot", battery_level=100, status="Idle", cooking_skill="Expert")
 
-    print(testrobot.get_cooking_skill())
+    def test_initialization(self):
+        super().test_initialization()
+        self.assertEqual(self.robot.get_cooking_skill(), "Expert")
 
-    testrobot.work()
-    testrobot.report_status()
-    testrobot.set_cooking_skill("chawke")
-    testrobot.report_status()
+    def test_work(self):
+        self.robot.work()
+        self.assertEqual(self.robot.get_battery_level(), 70)
 
-    testrobot.self_diagnose()   
+    def test_self_diagnose(self):
+        self.robot.self_diagnose()
+
+    def test_set_cooking_skill(self):
+        self.robot.set_cooking_skill("Intermediate")
+        self.assertEqual(self.robot.get_cooking_skill(), "Intermediate")
+
+if __name__ == '__main__':
+    unittest.main()
