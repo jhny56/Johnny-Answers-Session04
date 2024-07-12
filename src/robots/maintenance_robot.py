@@ -7,8 +7,8 @@ class MaintencanceRobot(CookingRobot,CleaningRobot):
         self.cleaning_tool = cleaning_tool
 
     def multi_task(self):
-        super(CookingRobot,self).work()
         super(CleaningRobot,self).work()
+        super(CookingRobot,self).work()
 
 
     #get set cooking_skill

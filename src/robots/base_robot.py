@@ -21,6 +21,7 @@ class Robot(ABC):
     def report_status(self):
         print("robot name : " + self.name)
         print("robot status : " + self.status)
+        print("robot battery level : " + self.battery_level)
 
     def decreasing_battery(self,amount:int):
         if(self.battery_level - amount <= 0):
